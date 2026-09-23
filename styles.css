@@ -1,0 +1,57 @@
+:root{
+	--bg:#0f172a;
+	--card:rgba(255,255,255,0.06);
+	--glass: rgba(255,255,255,0.06);
+	--accent:#2dd4bf;
+	--accent-2:#7c3aed;
+	--muted:#9aa4b2;
+}
+*{box-sizing:border-box;font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#071124 0%, #0f2a3a 100%);color:#e6eef6}
+.container{max-width:880px;margin:36px auto;padding:28px}
+h1{text-align:center;margin-bottom:14px;font-size:28px}
+.controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.controls label{display:flex;flex-direction:column;font-size:14px;color:var(--muted)}
+.city-search{position:relative;min-width:240px}
+.city-search input{width:320px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit}
+.suggestions{position:absolute;left:0;right:0;top:74px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.04);list-style:none;margin:0;padding:8px 0;border-radius:12px;max-height:260px;overflow:auto;backdrop-filter:blur(6px)}
+.suggestions li{padding:10px 14px;cursor:pointer;color:#e6eef6}
+.suggestions li:hover{background:rgba(255,255,255,0.03)}
+.controls input{padding:12px 14px;border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-top:6px;background:rgba(255,255,255,0.02);color:inherit}
+select{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);color:inherit}
+button{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041022;border:0;padding:14px 20px;border-radius:14px;cursor:pointer;font-weight:600;box-shadow:0 8px 30px rgba(124,58,237,0.18);transform:translateZ(0);transition:transform .14s ease,box-shadow .14s ease}
+button:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(124,58,237,0.22)}
+.result{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 8px 40px rgba(2,6,23,0.18);backdrop-filter:blur(6px)}
+.weather-card{display:flex;flex-direction:column;gap:8px}
+.weather-header{display:flex;justify-content:space-between;align-items:center}
+.weather-main{display:flex;gap:16px;align-items:center}
+.weather-info{display:flex;flex-direction:column}
+.place{font-weight:700;font-size:18px}
+.weather-card .temp{font-size:54px}
+.temp{font-size:32px;font-weight:700;margin:6px 0}
+.recommend{margin-top:8px;font-size:16px}
+.muted{color:var(--muted);font-size:13px}
+.loading{color:var(--muted);text-align:center}
+
+/* Emoji icon for weather */
+.emoji{font-size:64px;line-height:1;display:flex;align-items:center;justify-content:center;width:96px;height:96px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));box-shadow:inset 0 -8px 20px rgba(0,0,0,0.25);animation:float 4s ease-in-out infinite;color:#fff}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+.emoji.small{font-size:48px;width:72px;height:72px}
+
+.favorite-suggestion{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px 14px;border-radius:8px;margin-bottom:6px}
+.favorite-suggestion strong{color:var(--accent-2);font-weight:700}
+.recommend{display:block}
+.recommend .emoji-item{margin-right:8px;font-size:20px}
+
+/* Skeleton and spinner */
+.skeleton{background:linear-gradient(90deg,#0b2430 0%, #0e2f3b 50%, #0b2430 100%);border-radius:8px;min-height:18px}
+.skeleton-inline{display:inline-block;height:18px;width:80px;border-radius:8px}
+.spinner{width:36px;height:36px;border-radius:50%;border:4px solid rgba(255,255,255,0.08);border-top-color:var(--accent);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Responsive */
+@media (max-width:640px){
+	.city-search input{width:180px}
+	button{padding:12px 14px}
+	.weather-card .temp{font-size:40px}
+}

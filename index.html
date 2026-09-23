@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Weather Outfit Advisor</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="container">
+      <h1>🌤️ Weather Outfit Advisor</h1>
+
+      <section class="controls">
+        <label class="city-search">
+          Search city
+          <input id="city" type="search" placeholder="e.g. Detroit, MI" autocomplete="off">
+          <ul id="suggestions" class="suggestions" hidden></ul>
+        </label>
+
+        <label>
+          Latitude
+          <input id="lat" type="number" step="0.01" value="42.33">
+        </label>
+        <label>
+          Longitude
+          <input id="lon" type="number" step="0.01" value="-83.05">
+        </label>
+        <label>
+          Unit
+          <select id="unit">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+          </select>
+        </label>
+        <button id="fetchBtn">Get Forecast & Recommend</button>
+        <button id="saveFavBtn" title="Save current as favorite">⭐ Save Favorite</button>
+        <button id="favWeatherBtn" title="Show weather for favorite">📍 Weather for favorite?</button>
+      </section>
+
+      <section class="result" id="result">
+        <div id="weatherCard" class="weather-card" hidden>
+          <div class="weather-header">
+            <div id="place" class="place">--</div>
+            <div id="time" class="muted">--</div>
+          </div>
+          <div class="weather-main">
+            <div class="emoji" id="icon">❔</div>
+            <div>
+              <div class="temp" id="temp">--</div>
+              <div class="weather-info">
+                <div id="desc" class="muted">--</div>
+                <div id="wind" class="muted">--</div>
+              </div>
+            </div>
+          </div>
+          <div class="recommend" id="recommend">--</div>
+        </div>
+        <p id="placeholder" class="loading">Press the button to fetch the weather.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
